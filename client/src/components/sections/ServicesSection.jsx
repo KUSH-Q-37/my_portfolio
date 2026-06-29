@@ -17,14 +17,15 @@ function ServicesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="mt-10 grid gap-6 lg:grid-cols-3"
+          className="mt-10 grid gap-6 lg:grid-cols-1 md:grid-cols-2"
         >
           {portfolioData.services.map((service, index) => (
             <motion.div
               key={service.title}
               variants={popIn}
               whileHover={{ scale: 1.05, y: -8, boxShadow: "0 25px 50px rgba(59, 130, 246, 0.15)" }}
-              className="group rounded-[2rem] border border-white/10 bg-slate-950/80 p-7 shadow-2xl shadow-black/20 backdrop-blur-3xl transition hover:border-sky-400/50 hover:bg-slate-900/80 cursor-pointer"
+              whileTap={{ scale: 0.98 }}
+              className="group rounded-[2rem] border border-white/10 bg-slate-950/80 p-7 shadow-2xl backdrop-blur-md md:backdrop-blur-3xl transition hover:border-sky-400/50 active:border-sky-400/50 active:bg-slate-900/80 cursor-pointer"
             >
               <div className="flex items-center justify-between gap-4">
                 <div>

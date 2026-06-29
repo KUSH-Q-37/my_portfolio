@@ -20,7 +20,7 @@ function ResumeSection() {
             whileInView="visible"
             whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.1)" }}
             viewport={{ once: true, amount: 0.25 }}
-            className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 backdrop-blur-3xl transition"
+            className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 backdrop-blur-md md:backdrop-blur-3xl bg-slate-950/90 md:bg-slate-950/50 transition"
           >
             <h3 className="text-xl font-semibold text-white">Key strengths</h3>
             <ul className="mt-6 space-y-4 text-slate-300 leading-8">
@@ -46,9 +46,9 @@ function ResumeSection() {
             initial="hidden"
             whileInView="visible"
             whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.1)" }}
+            whileTap={{ scale: 0.98 }}
             viewport={{ once: true, amount: 0.25 }}
-            transition={{ delay: 0.1 }}
-            className="rounded-[2rem] border border-white/10 bg-slate-950/70 p-8 shadow-2xl shadow-black/20 backdrop-blur-3xl transition"
+            className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 backdrop-blur-md md:backdrop-blur-3xl bg-slate-950/90 md:bg-slate-950/50 transition"
           >
             <p className="text-slate-300 leading-8">
               Download the PDF to view my full education, projects, skills, and experience in one place.

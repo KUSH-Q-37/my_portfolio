@@ -22,13 +22,14 @@ function ProjectsSection() {
             </h2>
           </motion.div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 lg:grid-cols-1 md:grid-cols-2">
             {portfolioData.projects.map((project) => (
               <motion.div
                 key={project.title}
                 variants={scaleInUp}
                 whileHover={{ y: -10, boxShadow: "0 25px 50px rgba(59, 130, 246, 0.2)" }}
-                className="group rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-xl shadow-black/20 backdrop-blur-2xl transition hover:border-sky-400/30 hover:bg-white/10 flex flex-col h-full"
+                whileTap={{ scale: 0.98 }}
+                className="group rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-xl shadow-black/20 backdrop-blur-2xl transition hover:border-sky-400/30 active:border-sky-400/30 active:bg-white/10 flex flex-col h-full"
               >
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-white">{project.title}</h3>

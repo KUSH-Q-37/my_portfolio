@@ -23,7 +23,8 @@ function ExperienceSection() {
             <motion.article
               key={`${item.company}-${index}`}
               variants={blurInUp}
-              className="rounded-[1.75rem] border border-white/10 bg-white/5 p-7 backdrop-blur-2xl hover:border-sky-400/30 hover:bg-white/10 transition"
+              whileTap={{ scale: 0.98 }}
+              className="rounded-[1.75rem] border border-white/10 bg-white/5 p-7 backdrop-blur-2xl hover:border-sky-400/30 hover:bg-white/10 active:border-sky-400/30 active:bg-white/10 transition"
             >
               <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                 <div>

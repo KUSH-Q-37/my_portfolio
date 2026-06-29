@@ -83,7 +83,7 @@ function HeroSection() {
             {/* The main floating container */}
             <motion.div 
               variants={floatingAnimation}
-              className="rounded-[2.5rem] border border-white/10 bg-[#0F172A]/80 p-8 shadow-2xl backdrop-blur-3xl transition-colors hover:border-white/20"
+              className="rounded-[2.5rem] border border-white/10 bg-[#0F172A]/80 p-8 shadow-2xl backdrop-blur-md md:backdrop-blur-3xl bg-slate-950/90 md:bg-slate-950/50 transition-colors hover:border-white/20"
             >
               <div className="space-y-6">
                 <div className="rounded-[2rem] border border-white/5 bg-[#111827]/80 p-6 shadow-inner">
@@ -94,7 +94,7 @@ function HeroSection() {
                   </p>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
                   {[
                     { label: "UI / UX", value: "Beautiful interfaces" },
                     { label: "Performance", value: "Fast loading" },
@@ -107,6 +107,7 @@ function HeroSection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 + (index * 0.1) }}
                       whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+                      whileTap={{ scale: 0.98 }}
                       className="rounded-3xl border border-white/5 bg-[#111827]/50 p-5 cursor-default transition-colors"
                     >
                       <p className="text-xs uppercase tracking-[0.3em] text-[#3B82F6] font-medium">{item.label}</p>

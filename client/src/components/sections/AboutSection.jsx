@@ -13,7 +13,7 @@ function AboutSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={slideUp}
-          className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-white/5 p-10 shadow-2xl shadow-black/20 backdrop-blur-3xl"
+          className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-white/5 p-10 shadow-2xl shadow-black/20 backdrop-blur-md md:backdrop-blur-3xl bg-slate-950/90 md:bg-slate-950/50"
         >
           <div className="space-y-8">
             <span className="text-sm uppercase tracking-[0.3em] text-sky-300">About</span>
@@ -37,13 +37,14 @@ function AboutSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+              className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
             >
               {portfolioData.metrics?.map((metric) => (
                 <motion.div
                   key={metric.label}
                   variants={staggerItem}
-                  className="rounded-[1.75rem] border border-white/10 bg-slate-900/70 p-5 text-center hover:border-sky-400/50 hover:bg-slate-900/90 transition"
+                  whileTap={{ scale: 0.95 }}
+                  className="rounded-[1.75rem] border border-white/10 bg-slate-900/70 p-5 text-center hover:border-sky-400/50 hover:bg-slate-900/90 active:border-sky-400/50 active:bg-slate-900/90 transition"
                 >
                   <p className="text-3xl font-bold text-sky-300">
                     <AnimatedCounter value={metric.value} duration={1.5} />

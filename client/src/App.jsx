@@ -25,8 +25,8 @@ function App() {
       <ScrollProgress />
       <Navbar />
 
-      {/* Removed the cursor-none class so the native smooth cursor returns */}
-      <main className="relative z-10">
+      {/* FIXED: Added w-full, overflow-x-hidden, and base colors to completely lock the global layout */}
+      <main className="relative z-10 w-full min-h-screen overflow-x-hidden bg-slate-950 text-slate-50 antialiased selection:bg-sky-500/30">
         <HeroSection />
         <AboutSection />
         <ResumeSection />

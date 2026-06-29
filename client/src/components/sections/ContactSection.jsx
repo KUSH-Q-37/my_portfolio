@@ -6,7 +6,7 @@ import { portfolioData } from "../../data/portfolioData";
 
 function ContactSection() {
   return (
-    <section id="contact" className="py-28">
+    <section id="contact" className="pt-36 pb-16 lg:py-28 overflow-hidden">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           {/* Left Column: Heading & Introduction */}
@@ -24,15 +24,15 @@ function ContactSection() {
             />
           </motion.div>
 
-          {/* Right Column: Contact Links (Replaces the Form) */}
+          {/* Right Column: Contact Links */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.45, delay: 0.05 }}
-            className="rounded-[2rem] border border-white/10 bg-slate-950/70 p-8 shadow-2xl shadow-black/25 backdrop-blur-3xl"
+            className="rounded-[2rem] border border-white/10 p-5 md:p-8 shadow-2xl shadow-black/25 backdrop-blur-md md:backdrop-blur-3xl bg-slate-950/90 md:bg-slate-950/50"
           >
-            <p className="text-slate-300 text-lg leading-relaxed">
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed">
               I'm available for software development, full-stack engineering, and data-driven projects. 
               Use the links below to get in touch and I'll reply with a clear next step.
             </p>
@@ -65,14 +65,18 @@ function ContactSection() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:bg-slate-900/90 hover:border-sky-400/30"
+                    className="flex w-full items-center gap-3 md:gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 md:p-6 transition hover:bg-slate-900/90 hover:border-sky-400/30 active:bg-slate-900/90 active:border-sky-400/30 active:scale-[0.98]"
                   >
-                    <div className="rounded-full bg-sky-500/10 p-3 text-sky-300">
-                      <Icon size={24} />
+                    <div className="shrink-0 rounded-full bg-sky-500/10 p-3 text-sky-300">
+                      <Icon size={20} className="md:h-6 md:w-6" />
                     </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.2em] text-slate-400">{item.label}</p>
-                      <p className="text-lg font-semibold text-white">{item.value}</p>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-slate-400">
+                        {item.label}
+                      </p>
+                      <p className="truncate text-sm md:text-lg font-semibold text-white">
+                        {item.value}
+                      </p>
                     </div>
                   </a>
                 );

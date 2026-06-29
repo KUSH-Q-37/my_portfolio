@@ -11,12 +11,12 @@ const navItems = [
   { id: "work", label: "Work" },
   { id: "services", label: "Services" },
   { id: "testimonials", label: "Testimonials" },
-  { id: "contact", label: "Contact" }
+  { id: "contact", label: "Contact" },
 ];
 
 const mobileMenuVariants = {
   closed: { opacity: 0, height: 0, transition: { duration: 0.24 } },
-  open: { opacity: 1, height: "auto", transition: { duration: 0.24 } }
+  open: { opacity: 1, height: "auto", transition: { duration: 0.24 } },
 };
 
 function Navbar() {
@@ -30,19 +30,17 @@ function Navbar() {
 
     if (sections.length === 0) return undefined;
 
-    // Simplified & more reliable scroll spy
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // Triggers the state update when a section enters the center area
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
         });
       },
       {
-        rootMargin: "-40% 0px -50% 0px", // The "active zone" is the middle of the screen
-        threshold: 0, // Triggers immediately when entering the active zone
+        rootMargin: "-40% 0px -50% 0px",
+        threshold: 0,
       }
     );
 
@@ -53,14 +51,17 @@ function Navbar() {
   const handleNavClick = (id) => {
     const section = document.getElementById(id);
     if (!section) return;
-
-    section.scrollIntoView({ behavior: "smooth", block: "start" });
+    
+    // Close menu first, then scroll with a delay to ensure layout stability
     setIsOpen(false);
+    setTimeout(() => {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
   };
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 transition-all duration-300">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 backdrop-blur-3xl bg-slate-950/20 border-b border-white/10 shadow-[0_25px_80px_-40px_rgba(15,23,42,0.75)]">
+    <header className="fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 backdrop-blur-md md:backdrop-blur-3xl bg-slate-950/90 md:bg-slate-950/50 border-b border-white/10 shadow-[0_25px_80px_-40px_rgba(15,23,42,0.75)]">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
         <button
           type="button"
           onClick={() => handleNavClick("home")}
@@ -70,7 +71,7 @@ function Navbar() {
           KUSH BHARDWAJ
         </button>
 
-        {/* Desktop Navigation with Framer Motion Sliding Pill */}
+        {/* Desktop Navigation */}
         <nav className="hidden items-center gap-2 lg:flex z-10">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
@@ -117,8 +118,8 @@ function Navbar() {
         variants={mobileMenuVariants}
         className="overflow-hidden lg:hidden"
       >
-        <div className="mx-auto max-w-7xl px-6 pb-6 pt-4">
-          <div className="rounded-3xl border border-white/10 bg-slate-950/95 p-5 shadow-2xl shadow-black/40 backdrop-blur-3xl">
+        <div className="mx-auto w-full px-4 pb-6 pt-2 sm:px-6">
+          <div className="rounded-3xl border border-white/10 bg-slate-950/95 p-5 shadow-2xl shadow-black/40 backdrop-blur-md md:backdrop-blur-3xl">
             <div className="flex flex-col gap-2">
               {navItems.map((item) => {
                 const isActive = activeSection === item.id;
@@ -127,7 +128,7 @@ function Navbar() {
                     key={item.id}
                     type="button"
                     onClick={() => handleNavClick(item.id)}
-                    className={`w-full rounded-2xl px-4 py-3 text-left text-base font-medium transition-all duration-300 ease-in-out ${
+                    className={`w-full rounded-2xl px-4 py-3 text-left text-base font-medium transition-all duration-300 ease-in-out active:scale-[0.98] active:bg-white/10 ${
                       isActive
                         ? "bg-white/10 text-white shadow-inner border border-white/5"
                         : "text-slate-400 hover:bg-white/5 hover:text-white"
