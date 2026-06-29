@@ -30,7 +30,7 @@ function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.45, delay: 0.05 }}
-            className="rounded-[2rem] border border-white/10 p-5 md:p-8 shadow-2xl shadow-black/25 backdrop-blur-md md:backdrop-blur-3xl bg-slate-950/90 md:bg-slate-950/50"
+            className="rounded-[2rem] border border-white/10 p-5 md:p-8 shadow-2xl shadow-black/25 backdrop-blur-lg md:backdrop-blur-lg bg-slate-950/90 md:bg-slate-950/50"
           >
             <p className="text-slate-300 text-base md:text-lg leading-relaxed">
               I'm available for software development, full-stack engineering, and data-driven projects. 
@@ -59,12 +59,16 @@ function ContactSection() {
                 },
               ].map((item) => {
                 const Icon = item.icon;
+                // Check if this specific link is an email protocol
+                const isMail = item.href.startsWith("mailto:");
+
                 return (
                   <a
                     key={item.label}
                     href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    // FIXED: Only open in a new tab if it's NOT an email link
+                    target={isMail ? "_self" : "_blank"}
+                    rel={isMail ? undefined : "noopener noreferrer"}
                     className="flex w-full items-center gap-3 md:gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 md:p-6 transition hover:bg-slate-900/90 hover:border-sky-400/30 active:bg-slate-900/90 active:border-sky-400/30 active:scale-[0.98]"
                   >
                     <div className="shrink-0 rounded-full bg-sky-500/10 p-3 text-sky-300">

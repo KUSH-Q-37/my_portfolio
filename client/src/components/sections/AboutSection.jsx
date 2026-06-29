@@ -13,7 +13,7 @@ function AboutSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={slideUp}
-          className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-white/5 p-10 shadow-2xl shadow-black/20 backdrop-blur-md md:backdrop-blur-3xl bg-slate-950/90 md:bg-slate-950/50"
+          className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-white/5 p-10 shadow-2xl shadow-black/20 backdrop-blur-lg md:backdrop-blur-lg bg-slate-950/90 md:bg-slate-950/50"
         >
           <div className="space-y-8">
             <span className="text-sm uppercase tracking-[0.3em] text-sky-300">About</span>

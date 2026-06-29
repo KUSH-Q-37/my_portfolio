@@ -52,7 +52,6 @@ function Navbar() {
     const section = document.getElementById(id);
     if (!section) return;
     
-    // Close menu first, then scroll with a delay to ensure layout stability
     setIsOpen(false);
     setTimeout(() => {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -60,7 +59,7 @@ function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 backdrop-blur-md md:backdrop-blur-3xl bg-slate-950/90 md:bg-slate-950/50 border-b border-white/10 shadow-[0_25px_80px_-40px_rgba(15,23,42,0.75)]">
+    <header className="fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 backdrop-blur-lg md:backdrop-blur-lg bg-slate-950/90 md:bg-slate-950/50 border-b border-white/10 shadow-[0_25px_80px_-40px_rgba(15,23,42,0.75)]">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
         <button
           type="button"
@@ -71,7 +70,6 @@ function Navbar() {
           KUSH BHARDWAJ
         </button>
 
-        {/* Desktop Navigation */}
         <nav className="hidden items-center gap-2 lg:flex z-10">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
@@ -98,7 +96,6 @@ function Navbar() {
           })}
         </nav>
 
-        {/* Mobile Menu Toggle */}
         <div className="flex items-center gap-3 z-10">
           <button
             type="button"
@@ -111,7 +108,6 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <motion.div
         initial="closed"
         animate={isOpen ? "open" : "closed"}
@@ -119,7 +115,7 @@ function Navbar() {
         className="overflow-hidden lg:hidden"
       >
         <div className="mx-auto w-full px-4 pb-6 pt-2 sm:px-6">
-          <div className="rounded-3xl border border-white/10 bg-slate-950/95 p-5 shadow-2xl shadow-black/40 backdrop-blur-md md:backdrop-blur-3xl">
+          <div className="rounded-3xl border border-white/10 bg-slate-950/95 p-5 shadow-2xl shadow-black/40 backdrop-blur-lg md:backdrop-blur-lg">
             <div className="flex flex-col gap-2">
               {navItems.map((item) => {
                 const isActive = activeSection === item.id;

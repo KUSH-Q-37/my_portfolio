@@ -39,7 +39,7 @@ function TestimonialsSection() {
               whileTap={{
                 scale: 0.98,
               }} /* NEW: Added for mobile tap feedback */
-              className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-md md:backdrop-blur-3xl shadow-xl hover:border-sky-400/40 active:border-sky-400/40 transition cursor-pointer"
+              className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-lg md:backdrop-blur-lg shadow-xl hover:border-sky-400/40 active:border-sky-400/40 transition cursor-pointer"
             >
               <motion.span
                 animate={{ rotate: [0, 10, -10, 0] }}
