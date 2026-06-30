@@ -3,7 +3,7 @@ export const portfolioData = {
   title: "Computer Science Engineering Undergraduate",
   heroTagline: "Passionate about software development, full-stack engineering, data analysis, and machine learning.",
   resumeStatus: "Profile content updated from your provided resume summary.",
-  resumeUrl: "https://drive.google.com/file/d/1_FRaEOfZd9a8cioYYyql8AhMI615Ns6G/view?usp=sharing",
+  resumeUrl: "https://drive.google.com/file/d/15h0dq2mlaTW24Us4TaKa-_Vx_BnsEZIH/view?usp=sharing",
   resumeHighlights: [
     "Experienced in full-stack development with React, Node.js, and Python.",
     "Built data analytics solutions using Pandas, Matplotlib, and SQL.",
